@@ -1,0 +1,207 @@
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <style>
+        @font-face {
+	font-family: 'LobsterRegular';
+	src: url('data/fonts/Lobster-Regular.ttf');
+}
+
+h1 {
+    font-family:'LobsterRegular', Arial, sans-serif;
+     color:"#d3c0ad"
+
+}
+         .white-background {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        .green-background{
+            background-color: rgba(236, 242, 240, 1);
+        }
+        .halftop {
+            display:block;
+             position: relative;
+            width:100%;
+            height:50vh
+        }
+        .halfbottom{
+            display:block;
+             position: relative;
+            width:100%;
+            height:50vh
+        }
+        div.emblem {
+            height: 100%;
+            position: relative;
+            background-color: rgba(236, 242, 240, 0.3);
+        }
+        
+        div.emblem img {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+        
+        #first {
+            background-color: #0ff;
+            background-image: url("data/img/01.jpg");
+            background-size: 100%;
+            width: 100%;
+            height: 100%
+        }
+
+        
+
+       #map{
+           display:block;
+           position: absolute;
+           width:100%;
+           height:100%;
+           z-index:0;
+                       top:0px
+
+       }
+       .white-transparent{
+            background-color: rgba(255, 255, 255, 0.5);
+            display:block;
+            position: absolute;
+            width:100%;
+            height:10vh;
+            z-index:1;
+        text-align:center
+
+
+       }
+        
+        .navbar {
+            margin: 0px
+        }
+        
+        ul.nav {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        
+        .nav li {
+            display: inline-block;
+            width: 25%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav a {
+            text-align: center;
+            padding: 12px 0 13px 0;
+            margin: 0;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            display: block;
+        }
+        
+        .nav a:hover {
+            background: #A26A42;
+            border: none;
+        }
+        
+        ul.nav li:first-child a {
+            border: none;
+        }
+        
+        ul.nav li:last-child a {
+            border: none;
+        }
+
+        ​
+    </style>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="js/onepage-scroll-master/onepage-scroll.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/onepage-scroll-master/jquery.onepage-scroll.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>
+   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="main">
+        <section id="first">
+            <div class="emblem">
+                <img src="data/img/Эмблема.png" align="middle" />
+            </div>
+        </section>
+        <section id="second">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <ul class="nav navbar-nav">
+                    <li><a>Главная</a></li>
+                    <li><a>Место</a></li>
+                    <li><a>Дресс-код</a></li>
+                    <li><a>Галерея</a></li>
+                </ul>
+            </nav>
+            <div class="white-background halftop">
+                1
+            </div>
+            <div class="green-background halfbottom">
+                2
+            </div>
+
+        </section>
+        <section id="third">
+            <div  class="white-transparent">
+               <h1> МЕСТО ПРОВЕДЕНИЯ</h1>
+            </div>
+
+            <div id="map">
+            </div>
+
+        </section>
+        <section id="fourth">
+        </section>
+        <section id="fifth">
+        </section>
+        <section id="sixth">
+        </section>
+        <section id="seventh">
+        </section>
+    </div>
+    <script>
+        $(".main").onepage_scroll({
+   sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+   easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+   animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
+   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+   beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+   afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+   loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+   keyboard: true,                  // You can activate the keyboard controls
+   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
+                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+                                    // the browser's width is less than 600, the fallback will kick in.
+   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+});
+ymaps.ready(init);
+    var myMap;
+
+    function init(){     
+        myMap = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 7
+        });
+    }
+
+        </script>
+</body>
+
+</html>
