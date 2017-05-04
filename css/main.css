@@ -1,0 +1,199 @@
+       @font-face {
+            font-family: 'LobsterRegular';
+            src: url('../data/fonts/Lobster/Lobster-Regular.ttf');
+        }
+        
+        @font-face {
+            font-family: 'Scada';
+            src: url('../data/fonts/Scada/Scada-Regular.ttf');
+        }
+        
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        div {
+            font-family: 'Scada', Arial, sans-serif;
+        }
+        
+       .heading {
+            font-family: 'LobsterRegular', Arial, sans-serif;
+            color: #d3c0ad
+        }
+        
+        .white-background {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        
+        .green-background {
+            background-color: rgba(236, 242, 240, 1);
+        }
+        
+        .halftop {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 50vh
+        }
+        
+        .halfbottom {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 50vh
+        }
+         #first {
+            background-color: #fff;
+            background-image: url("../data/img/02.jpg");
+            background-size: 100%;
+            width: 100%;
+            height: 100%
+        }
+        
+        div.emblem {
+            height: 100%;
+            position: relative;
+            background-color: rgba(236, 242, 240, 0.5);
+        }
+        
+        div.emblem img {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+        
+        #wrapper-horses {
+           /* padding: 20px 20px 20px 20px;*/
+            background-color: rgba(236, 234, 233, 0.5);
+        }
+        #horses-text{
+            text-align: center;
+          display: inline-block;
+    vertical-align: middle;
+    float: none;
+            font-size: 20px
+        }
+        
+        #map {
+            height: 40%;
+            padding-bottom: 50px;
+        }
+
+        #third>.container-fluid>.row {
+            padding-top: 10px;
+        }
+
+        #fourth {
+          background-color:#eceae9
+        }
+        
+        .info_box{
+            background-color: #fff;
+            height: 40vh
+            
+        }
+
+        #fifth{
+
+                        background-color: rgba(236, 242, 240, 1);
+
+        }
+        
+
+#sixth{ 
+                background-image: url("../data/img/ending.jpg");
+            background-size: 100%;
+            width: 100%;
+            height: 100%
+
+}
+
+        
+        .white-transparent {
+            background-color: rgba(255, 255, 255, 0.5);
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            z-index: 1;
+            text-align: center
+        }
+        
+        .navbar {
+            margin: 0px
+        }
+        
+        ul.nav {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        
+        .nav li {
+            display: inline-block;
+            width: 25%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav a {
+            text-align: center;
+            padding: 12px 0 13px 0;
+            margin: 0;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            display: block;
+        }
+        
+        .nav a:hover {
+            background: #A26A42;
+            border: none;
+        }
+        
+        ul.nav li:first-child a {
+            border: none;
+        }
+        
+        ul.nav li:last-child a {
+            border: none;
+        }
+        
+        .white-background>h1 {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            font-size: 7vh
+        }
+        
+        .green-background>.row {
+            position: absolute;
+            top: 30%;
+            width: 100%
+        }
+        
+        .number-counter {
+            display: block;
+            position: relative;
+            font-family: 'LobsterRegular', Arial, Helvetica, sans-serif;
+            font-size: 5vh;
+            text-align: center
+        }
+        
+        .title-counter {
+            display: block;
+            position: relative;
+            font-family: 'Scada', Arial, Helvetica, sans-serif;
+            font-size: 3vh;
+            text-align: center
+        }
+        
+
+        ​

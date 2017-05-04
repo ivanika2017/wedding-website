@@ -3,140 +3,34 @@
 <head>
 
     <meta charset="UTF-8">
-    <style>
-        @font-face {
-	font-family: 'LobsterRegular';
-	src: url('data/fonts/Lobster-Regular.ttf');
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/gallery.css" rel="stylesheet">
 
-h1 {
-    font-family:'LobsterRegular', Arial, sans-serif;
-     color:"#d3c0ad"
-
-}
-         .white-background {
-            background-color: rgba(255, 255, 255, 1);
-        }
-        .green-background{
-            background-color: rgba(236, 242, 240, 1);
-        }
-        .halftop {
-            display:block;
-             position: relative;
-            width:100%;
-            height:50vh
-        }
-        .halfbottom{
-            display:block;
-             position: relative;
-            width:100%;
-            height:50vh
-        }
-        div.emblem {
-            height: 100%;
-            position: relative;
-            background-color: rgba(236, 242, 240, 0.3);
-        }
-        
-        div.emblem img {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%)
-        }
-        
-        #first {
-            background-color: #0ff;
-            background-image: url("data/img/01.jpg");
-            background-size: 100%;
-            width: 100%;
-            height: 100%
-        }
-
-        
-
-       #map{
-           display:block;
-           position: absolute;
-           width:100%;
-           height:100%;
-           z-index:0;
-                       top:0px
-
-       }
-       .white-transparent{
-            background-color: rgba(255, 255, 255, 0.5);
-            display:block;
-            position: absolute;
-            width:100%;
-            height:10vh;
-            z-index:1;
-        text-align:center
-
-
-       }
-        
-        .navbar {
-            margin: 0px
-        }
-        
-        ul.nav {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-            list-style: none;
-            text-align: center;
-            font-family: sans-serif;
-        }
-        
-        .nav li {
-            display: inline-block;
-            width: 25%;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .nav a {
-            text-align: center;
-            padding: 12px 0 13px 0;
-            margin: 0;
-            border-left: 1px solid #fff;
-            border-right: 1px solid #fff;
-            display: block;
-        }
-        
-        .nav a:hover {
-            background: #A26A42;
-            border: none;
-        }
-        
-        ul.nav li:first-child a {
-            border: none;
-        }
-        
-        ul.nav li:last-child a {
-            border: none;
-        }
-
-        ​
-    </style>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+
     <link rel="stylesheet" href="js/onepage-scroll-master/onepage-scroll.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+
     <script src="js/onepage-scroll-master/jquery.onepage-scroll.js"></script>
     <script src="js/bootstrap/bootstrap.js"></script>
-   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="js/index.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 
 <body>
 
-    <div class="main">
+    <div class="main ">
         <section id="first">
-            <div class="emblem">
-                <img src="data/img/Эмблема.png" align="middle" />
+            <div class="loader">
+                <div class="emblem">
+                    <img src="data/img/Эмблема.png" align="middle" />
+                </div>
             </div>
         </section>
         <section id="second">
@@ -148,60 +42,358 @@ h1 {
                     <li><a>Галерея</a></li>
                 </ul>
             </nav>
-            <div class="white-background halftop">
-                1
+            <div class="white-background halftop heading" style="text-align:center">
+                <h1> Мы определились с датой!
+                    <br> и считаем дни!
+                </h1>
             </div>
             <div class="green-background halfbottom">
-                2
+                <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-2">
+                        <div id="num-week" class="number-counter">
+                        </div>
+                        <div id="title-week" class="title-counter">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="num-day" class="number-counter">
+                        </div>
+                        <div id="title-day" class="title-counter">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="num-hours" class="number-counter">
+                        </div>
+                        <div id="title-hours" class="title-counter">
+                        </div>
+
+                    </div>
+                    <div class="col-md-2">
+                        <div id="num-min" class="number-counter">
+                        </div>
+                        <div id="title-min" class="title-counter">
+                        </div>
+
+                    </div>
+                    <div class="col-md-2">
+                        <div id="num-sec" class="number-counter">
+                        </div>
+                        <div id="title-sec" class="title-counter">
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
             </div>
 
         </section>
         <section id="third">
-            <div  class="white-transparent">
-               <h1> МЕСТО ПРОВЕДЕНИЯ</h1>
-            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="white-transparent col-md-12">
+                        <h1 class="heading"> Место проведения</h1>
+                    </div>
+                </div>
+                <div class="row white-transparent col-md-12" style="height:50%">
+                    <div id="wrapper-horses" class="col-md-4 col-md-offset-1">
+                        
+                            <div id="img_wrapper">
+                                <img src="data/img/avanpost.jpg" />
+                                <div id="horses-text">
+                                    <h3> Место встречи </h3>
+                                    <div>
+                                        Информация о месте сбора будет сообщена дополнительно
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <div id="wrapper-horses" class="col-md-4 col-md-offset-2">
+                        
+                            <div id="img_wrapper">
+                                <img src="data/img/avanpost.jpg" />
+                                <div id="horses-text">
+                                    <h3> Место проведения -Конная база Аванпост </h3>
+                                    <div>
+                                        Московская обл., Можайский р-н, д. Исавицы
+                                        <br> координаты 55°31’17″N 36°0’18″E
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="map" class="col-md-12">
+                    </div>
+                </div>
 
-            <div id="map">
+
             </div>
 
         </section>
         <section id="fourth">
+            <div class=" container-fluid">
+                <div class="row white-transparent">
+                    <h1 class="heading"> Дресс - код "Farm Chic"</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-3 info_box">
+                        Девушки:
+                        <ul>
+                            <li> летний сарафан / платье / лёгкие
+                            </li>
+                            <li>
+                                обувь на устойчивом каблуке / балетки / кеды / ковбойские сапоги.
+                            </li>
+                        </ul>
+                        Не рекомендуется:
+                        <ul>
+                            <li> облегающие платья</li>
+                            <li> обувь на каблуке</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-offset-2  col-md-3 info_box">
+                        Мужчины:
+                        <ul>
+                            <li> рубашка / поло
+                            </li>
+                            <li> брюки / чиносы
+                            </li>
+                            <li> галстуки-бабочки веселых расцветок.
+                            </li>
+                        </ul>
+                        Не рекомендуется:
+                        <ul>
+                            <li> классический костюм.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12">Не забудьте взять с собой зонтик и непромокаемые ботинки (сапоги).</div>
+                </div>
+            </div>
         </section>
         <section id="fifth">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="white-transparent col-md-12">
+                        <h1 class="heading"> Галерея</h1>
+                    </div>
+                </div>
+                <div class="grid ">
+                    <div class="grid-sizer"></div>
+                    <div class="grid-item"> <img src="data/img/gallery/01.jpg" data-img="images/full/1.jpg" alt="Thumb1" /></div>
+                    <div class="grid-item grid-item--width2"><img src="data/img/gallery/02.jpg" data-img="images/full/1.jpg" alt="Thumb1" /></div>
+                    <div class="grid-item"><img src="data/img/gallery/03.jpg" data-img="images/full/1.jpg" alt="Thumb1" /></div>
+
+                    <div class="grid-item"> <img src="data/img/gallery/04.jpg" data-img="images/full/1.jpg" alt="Thumb1" /></div>
+                    <div class="grid-item grid-item--width2"><img src="data/img/gallery/05.jpg" data-img="images/full/1.jpg" alt="Thumb1" /></div>
+                    <div class="grid-item"><img src="data/img/gallery/06.jpg" data-img="images/full/1.jpg" alt="Thumb1" /></div>
+                    <!--    
+                              <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+  </div>
+  -->
+
+
+
+                </div>
+            </div>
         </section>
         <section id="sixth">
-        </section>
-        <section id="seventh">
+            <div class="emblem">
+                <img src="data/img/Эмблема.png" align="middle" />
+            </div>
         </section>
     </div>
     <script>
         $(".main").onepage_scroll({
-   sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
-   easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
-                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-   animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
-   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
-   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-   beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
-   afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
-   loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-   keyboard: true,                  // You can activate the keyboard controls
-   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
-                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-                                    // the browser's width is less than 600, the fallback will kick in.
-   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
-});
-ymaps.ready(init);
-    var myMap;
-
-    function init(){     
-        myMap = new ymaps.Map("map", {
-            center: [55.76, 37.64],
-            zoom: 7
+            sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
+            easing: "ease-in", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+            // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+            animationTime: 1000, // AnimationTime let you define how long each section takes to animate
+            pagination: false, // You can either show or hide the pagination. Toggle true for show, false for hide.
+            updateURL: true, // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+            beforeMove: function (index) { }, // This option accepts a callback function. The function will be called before the page moves.
+            afterMove: function (index) { }, // This option accepts a callback function. The function will be called after the page moves.
+            loop: false, // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+            keyboard: true, // You can activate the keyboard controls
+            responsiveFallback: 2000, // You can fallback to normal page scroll by defining the width of the browser in which
+            // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+            // the browser's width is less than 600, the fallback will kick in.
+            direction: "vertical" // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
         });
-    }
+        // init Masonry
+        var $grid = $('.grid').masonry({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            columnWidth: '.grid-sizer'
+        });
+        $('.grid').imagesLoaded()
+            .always(function (instance) {
+                console.log('all images loaded');
+            })
+            .done(function (instance) {
+                console.log('all images successfully loaded');
+            })
+            .fail(function () {
+                console.log('all images loaded, at least one is broken');
+            })
+            .progress(function (instance, image) {
+                var result = image.isLoaded ? 'loaded' : 'broken';
+                console.log('image is ' + result + ' for ' + image.img.src);
+            });
+        // layout Isotope after each image loads
+        $grid.imagesLoaded().progress(function () {
+            $grid.masonry();
+        });
 
-        </script>
+        ymaps.ready(init);
+        window.setInterval(function () {
+            tic_date();
+        }, 1000);
+        var myMap;
+
+        function init() {
+            myMap = new ymaps.Map("map", {
+                center: [55.52, 36.00],
+                zoom: 16
+            })
+            myMap.geoObjects.add(new ymaps.Placemark([55.52, 36.0021], {
+                balloonContent: 'Конная база "Аванпост"',
+                iconCaption: 'Конная база "Аванпост"'
+            }, {
+                    preset: 'islands#blueCircleDotIconWithCaption',
+                    iconCaptionMaxWidth: '50'
+                }));
+
+        };
+
+
+
+
+
+//         var $container = $('#image-container');
+// var $status = $('#status');
+// var $progress = $('progress');
+
+// var supportsProgress = $progress[0] &&
+//   // IE does not support progress
+//   $progress[0].toString().indexOf('Unknown') === -1;
+
+// var loadedImageCount, imageCount;
+
+// $('#add').click( function() {
+//   // add new images
+//   var items = getItems();
+//   $container.prepend( $(items) );
+//   // use ImagesLoaded
+//   $container.imagesLoaded()
+//     .progress( onProgress )
+//     .always( onAlways );
+//   // reset progress counter
+//   imageCount = $container.find('img').length;
+//   resetProgress();
+//   updateProgress( 0 );
+// });
+
+// // reset container
+// $('#reset').click( function() {
+//   $container.empty();
+// });
+
+// // -----  ----- //
+
+// // return doc fragment with
+// function getItems() {
+//   var items = '';
+//   for ( var i = 0; i < 7; i++ ) {
+//     items += getImageItem();
+//   }
+//   return items;
+// }
+
+// // return an <li> with a <img> in it
+// function getImageItem() {
+//   var item = '<li class="is-loading">';
+//   var size = Math.random() * 3 + 1;
+//   var width = Math.random() * 110 + 100;
+//   width = Math.round( width * size );
+//   var height = Math.round( 140 * size );
+//   var rando = Math.ceil( Math.random() * 1000 );
+//   // 10% chance of broken image src
+//   // random parameter to prevent cached images
+//   var src = rando < 100 ? '//foo/broken-' + rando + '.jpg' :
+//     // use lorempixel for great random images
+//     '//lorempixel.com/' + width + '/' + height + '/' + '?' + rando;
+//   item += '<img src="' + src + '" /></li>';
+//   return item;
+// }
+
+// // -----  ----- //
+
+// function resetProgress() {
+//   $status.css({ opacity: 1 });
+//   loadedImageCount = 0;
+//   if ( supportsProgress ) {
+//     $progress.attr( 'max', imageCount );
+//   }
+// }
+
+// function updateProgress( value ) {
+//   if ( supportsProgress ) {
+//     $progress.attr( 'value', value );
+//   } else {
+//     // if you don't support progress elem
+//     $status.text( value + ' / ' + imageCount );
+//   }
+// }
+
+// // triggered after each item is loaded
+// function onProgress( imgLoad, image ) {
+//   // change class if the image is loaded or broken
+//   var $item = $( image.img ).parent();
+//   $item.removeClass('is-loading');
+//   if ( !image.isLoaded ) {
+//     $item.addClass('is-broken');
+//   }
+//   // update progress element
+//   loadedImageCount++;
+//   updateProgress( loadedImageCount );
+// }
+
+// // hide status when done
+// function onAlways() {
+//   $status.css({ opacity: 0 });
+// }
+    </script>
 </body>
 
 </html>
