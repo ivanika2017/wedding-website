@@ -11,14 +11,16 @@
 
 .grid-sizer,
 .grid-item {
-    padding: 5px 5px 5px 5px;
+    padding: 1px 1px 1px 1px;
   width: 33.333%;
 }
 
 .grid-item--width2{
     width:20%;
 }
-
+.grid-item--width3{
+    width:25%;
+}
 .grid-item {
   float: left;
 }

@@ -7,17 +7,32 @@
             font-family: 'Scada';
             src: url('../data/fonts/Scada/Scada-Regular.ttf');
         }
-        
-        
-        img {
-            max-width: 100%;
-            height: auto;
+                 body {
+            font-family: 'Scada', Arial, sans-serif;
         }
         
         div {
             font-family: 'Scada', Arial, sans-serif;
         }
         
+
+          h2 {
+            font-family: 'LobsterRegular', Arial, sans-serif;
+            text-align: center
+        }
+        h3{
+            font-family: 'LobsterRegular', Arial, sans-serif;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .navbar{
+           position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+        }
        .heading {
             font-family: 'LobsterRegular', Arial, sans-serif;
             color: #d3c0ad
@@ -47,15 +62,19 @@
          #first {
             background-color: #fff;
             background-image: url("../data/img/02.jpg");
-            background-size: 100%;
+            background-repeat: no-repeat;
+background-size: cover;
             width: 100%;
-            height: 100%
+            height:100%;
+        }
+        div.loader{
+                        background-color: rgba(236, 242, 240, 0.5);
+
         }
         
         div.emblem {
             height: 100%;
             position: relative;
-            background-color: rgba(236, 242, 240, 0.5);
         }
         
         div.emblem img {
@@ -66,10 +85,19 @@
             margin-right: -50%;
             transform: translate(-50%, -50%)
         }
-        
+        #third {
+                        background-color: rgba(236, 234, 233, 1);
+
+        }
+        #information{
+            text-align: center;
+             padding: 20px 20px 20px 20px;
+        }
         #wrapper-horses {
            /* padding: 20px 20px 20px 20px;*/
-            background-color: rgba(236, 234, 233, 0.5);
+           padding: 0px 0px 0px 0px;
+            background-color: #fff;
+
         }
         #horses-text{
             text-align: center;
@@ -78,24 +106,71 @@
     float: none;
             font-size: 20px
         }
-        
-        #map {
+        .place {
+            padding:20px 0px   20px 0px;
+            font-style: italic;
+        }
+                #map {
             height: 40%;
-            padding-bottom: 50px;
+            padding-bottom: 20px;
         }
 
         #third>.container-fluid>.row {
             padding-top: 10px;
         }
 
+#third>.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+#third>.row > [class*='col-'] {
+     display: flex;
+     flex-direction: column;
+}  
+.icon-on-top{
+    margin-top: -30px;
+}      
+.text-colored{
+    color: #888;
+}
+
         #fourth {
-          background-color:#eceae9
+                         background-color: #fff;
+
+          font-size: 16px
         }
         
-        .info_box{
-            background-color: #fff;
-            height: 40vh
-            
+        #background-drawing  { width: 416px; height: 366px; background: red; }
+
+        #dresscode-wrapper{
+
+            margin-top: 3%;
+                                    padding-bottom: 20px;
+
+        }
+
+        #dresscode-wrapper > .row > .col-md-5 {
+                                     background-color: rgba(236, 234, 233,0.5);
+        padding-left: 0px;
+        padding-right: 0px;
+        text-align: center;
+
+        }
+
+        #dresscode-wrapper>.row > .col-md-6{
+        padding-left: 0px;
+        padding-right: 0px;
+        }
+
+        .bottom_info{
+                                                 background-color: rgba(236, 234, 233,0.5);
+
+            border-top: 20px solid white;
+            padding: 10px 0px 10px 0px;
+
+            text-align: center
         }
 
         #fifth{
@@ -107,9 +182,11 @@
 
 #sixth{ 
                 background-image: url("../data/img/ending.jpg");
-            background-size: 100%;
+                            background-repeat: no-repeat;
+
+
             width: 100%;
-            height: 100%
+            background-size: cover;
 
 }
 
@@ -124,11 +201,15 @@
             text-align: center
         }
         
-        .navbar {
+        .navbar .navbar-nav {
+float:none;
             margin: 0px
         }
+        .navbar-brand >img {
+            margin-top: -10px
+        }
         
-        ul.nav {
+        /*ul.nav {
             width: 100%;
             margin: 0 auto;
             padding: 0;
@@ -164,7 +245,7 @@
         
         ul.nav li:last-child a {
             border: none;
-        }
+        }*/
         
         .white-background>h1 {
             position: absolute;
