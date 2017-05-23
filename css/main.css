@@ -10,7 +10,9 @@
                  body {
             font-family: 'Scada', Arial, sans-serif;
         }
-        
+        section {
+            padding-top:0px;
+        }
         div {
             font-family: 'Scada', Arial, sans-serif;
         }
@@ -61,7 +63,7 @@
         }
          #first {
             background-color: #fff;
-            background-image: url("../data/img/02.jpg");
+            background-image: url("../data/img/02_1.jpg");
             background-repeat: no-repeat;
 background-size: cover;
             width: 100%;
@@ -137,22 +139,25 @@ background-size: cover;
 }
 
         #fourth {
-                         background-color: #fff;
-
-          font-size: 16px
+         background-color: #fff;
+         font-size: 16px;
         }
+        .anchor{
+    display: block;
+    position: relative;
+    top: -40px;
+    visibility: hidden;      
+      }
         
         #background-drawing  { width: 416px; height: 366px; background: red; }
 
         #dresscode-wrapper{
-
             margin-top: 3%;
-                                    padding-bottom: 20px;
-
+            padding-bottom: 20px;
         }
 
         #dresscode-wrapper > .row > .col-md-5 {
-                                     background-color: rgba(236, 234, 233,0.5);
+        background-color: rgba(236, 234, 233,0.5);
         padding-left: 0px;
         padding-right: 0px;
         text-align: center;
@@ -165,29 +170,24 @@ background-size: cover;
         }
 
         .bottom_info{
-                                                 background-color: rgba(236, 234, 233,0.5);
-
+            background-color: rgba(236, 234, 233,0.5);
             border-top: 20px solid white;
             padding: 10px 0px 10px 0px;
-
+            font-size: 20px;
             text-align: center
         }
 
         #fifth{
-
-                        background-color: rgba(236, 242, 240, 1);
+          background-color: rgba(236, 242, 240, 1);
 
         }
         
 
 #sixth{ 
-                background-image: url("../data/img/ending.jpg");
-                            background-repeat: no-repeat;
-
-
+            background-image: url("../data/img/ending.jpg");
+            background-repeat: no-repeat;
             width: 100%;
             background-size: cover;
-
 }
 
         
@@ -202,50 +202,12 @@ background-size: cover;
         }
         
         .navbar .navbar-nav {
-float:none;
+            float:none;
             margin: 0px
         }
         .navbar-brand >img {
             margin-top: -10px
         }
-        
-        /*ul.nav {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-            list-style: none;
-            text-align: center;
-            font-family: sans-serif;
-        }
-        
-        .nav li {
-            display: inline-block;
-            width: 25%;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .nav a {
-            text-align: center;
-            padding: 12px 0 13px 0;
-            margin: 0;
-            border-left: 1px solid #fff;
-            border-right: 1px solid #fff;
-            display: block;
-        }
-        
-        .nav a:hover {
-            background: #A26A42;
-            border: none;
-        }
-        
-        ul.nav li:first-child a {
-            border: none;
-        }
-        
-        ul.nav li:last-child a {
-            border: none;
-        }*/
         
         .white-background>h1 {
             position: absolute;
