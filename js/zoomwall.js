@@ -87,6 +87,7 @@ var zoomwall = {
       for (var i in row) {
         row[i].style.width = (parseInt(window.getComputedStyle(row[i]).width, 10) / width * 100) + '%';
         row[i].style.height = 'auto';
+        // row[i].style.height = '300px';
       }
     }
   },

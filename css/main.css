@@ -70,7 +70,7 @@ background-size: cover;
             height:100%;
         }
         div.loader{
-                        background-color: rgba(236, 242, 240, 0.5);
+                        background-color: rgba(0, 0, 0, 0.2);
 
         }
         
@@ -79,11 +79,13 @@ background-size: cover;
             position: relative;
         }
         
+        
         div.emblem img {
             margin: 0;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            width:40%;
+            top: 30%;
+            left: 90%;
             margin-right: -50%;
             transform: translate(-50%, -50%)
         }
@@ -98,6 +100,7 @@ background-size: cover;
         #wrapper-horses {
            /* padding: 20px 20px 20px 20px;*/
            padding: 0px 0px 0px 0px;
+           margin-bottom: 10px;
             background-color: #fff;
 
         }
@@ -160,6 +163,9 @@ background-size: cover;
         background-color: rgba(236, 234, 233,0.5);
         padding-left: 0px;
         padding-right: 0px;
+        padding-bottom:10px;
+                margin-bottom:10px;
+
         text-align: center;
 
         }
@@ -181,7 +187,23 @@ background-size: cover;
           background-color: rgba(236, 242, 240, 1);
 
         }
-        
+        #zoomwall{
+            padding-bottom: 10px;
+        }
+        div.end-emblem{
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 100%;
+            position: relative;
+        }
+        div.end-emblem img {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+ 
+        }
 
 #sixth{ 
             background-image: url("../data/img/ending.jpg");
@@ -196,7 +218,6 @@ background-size: cover;
             display: block;
             position: absolute;
             width: 100%;
-            height: 10%;
             z-index: 1;
             text-align: center
         }
