@@ -161,7 +161,6 @@ var zoomwall = {
 
     block.classList.add('active');
     block.parentNode.classList.add('lightbox');
-
     // parent dimensions
     var parentStyle = window.getComputedStyle(block.parentNode);
 
@@ -191,6 +190,9 @@ var zoomwall = {
         block.dataset.lowres = block.src;
       }
       block.src = block.dataset.highres;
+      block.onload = function(){
+        document.getElementById("spinner").style.display = "none";
+      }
     }
     
     // determine what blocks are on this row
@@ -238,7 +240,7 @@ var zoomwall = {
     for (var i = 0; i < row.length && row[i] != block; i++) {
       leftOffsetX += parseInt(window.getComputedStyle(row[i]).width, 10) * scale;
     }
-
+    var untouchedLeftOffsetX = parentWidth / 2 - blockWidth * scale / 2 ;
     leftOffsetX = parentWidth / 2 - blockWidth * scale / 2 - leftOffsetX;
 
     var rightOffsetX = 0;  // shift in current row
@@ -268,6 +270,16 @@ var zoomwall = {
       row[k].style.transform = 'translate(' + percentageOffsetX.toFixed(8) + '%, ' + percentageOffsetY.toFixed(8) + '%) scale(' + scale.toFixed(8) + ')';
       row[k].style.webkitTransform = 'translate(' + percentageOffsetX.toFixed(8) + '%, ' + percentageOffsetY.toFixed(8) + '%) scale(' + scale.toFixed(8) + ')';
     }
+    var coords = block.getBoundingClientRect();
+         var spinner =  document.getElementById("spinner");
+             var scaledBlockWidth = parseInt(window.getComputedStyle(block).width, 10)/2*scale.toFixed(8);
+    var scaledBlockHeight = parseInt(window.getComputedStyle(block).height, 10)/2*scale.toFixed(8);
+        //  console.log(scaledBlockWidth,scaledBlockHeight,window.getComputedStyle(block).width,window.getComputedStyle(block).height,window.innerWidth,window.innerHeight);
+         spinner.style.display = "block";
+         spinner.style.left =(window.innerWidth-scaledBlockWidth)/2+scaledBlockWidth/2+'px';
+         spinner.style.top = (window.innerHeight-scaledBlockHeight)/2+scaledBlockHeight/2+'px';
+
+
 
     // transform items after
     var curTop;
