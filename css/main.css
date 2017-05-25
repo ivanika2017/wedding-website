@@ -87,8 +87,8 @@ background-size: cover;
             margin: 0;
             position: absolute;
             width:40%;
-            top: 30%;
-            left: 90%;
+            top: 25%;
+            left: -30%;
             margin-right: -50%;
             transform: translate(-50%, -50%)
         }
